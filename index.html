@@ -4,7 +4,7 @@
         <title>Online String Convertor tool- UpperCase,LowerCase...</title>
         <style>
             .app_container{
-                
+
             }
             h1,h2{
                 text-align: center;
@@ -14,22 +14,48 @@
             p{
                 text-align: justify;
             }
+            .result_style{
+               text-align: start;
+               
+            }
         </style>
     </head>
     <body>
         <div class="app_container">
         <h1>Online String Convertor tool</h1>
-        <p>Convert String offers resources for converting strings between formats. If you need a fast free online tool for applying common string functions or string manipulation routines then you are in the right place! We currently offer string manipulation functions like UpeerCase, Lowercase, Word and character count. </p><br/>
+        <p class="result_style">Convert String offers resources for converting strings between formats. If you need a fast free online tool for applying common string functions or string manipulation routines then you are in the right place! We currently offer string manipulation functions like UpeerCase, Lowercase, Word and character count. </p><br/>
         <h2>Let's start 😊</h2>
 
-        <input type="text" placeholder="Enter input text here ..." id="input-text"/>
-        <p id="result-text"></p>
-        <button>UpperCase</button>
-        <button>LowerCase</button>
-        <button>Char Count</button>
-        <button>Word Count</button>
+        <input type="text" placeholder="Enter input text here ..." id="input_text"/><br/>
+        <p id="result_text"> </p><br/>
+        <button onclick="performAction('uppercase')" class="up_case_btn">UpperCase</button>
+        <button onclick="performAction('lowercase')" class="up_case_btn">LowerCase</button>
+        <button onclick="performAction('charcount')" class="up_case_btn">Char Count</button>
+        <button onclick="performAction('wordcount')" class="up_case_btn">Word Count</button>
     </div>
-
+    <script>
+       function performAction(action) {
+         const inputVal=document.getElementById("input_text").value
+         const resVal=document.getElementById("result_text")
+         console.log(`result: ${inputVal}`)
+         console.log(`result: ${resVal}`)
+          
+         switch(action){
+            case 'uppercase':
+                 resVal.innerText=inputVal.toUpperCase()
+                 break;
+            case 'lowercase':
+                 resVal.innerText=inputVal.toLowerCase()
+                 break;
+            case 'charcount':
+                 resVal.innerText=`Total characters Count is : ${inputVal.length}`
+                 break;
+            default:
+                 resVal.innerText=`Word Count is: ${inputVal.split(" ").length}`
+                 break;
+          }
+       }
+    </script>
 
     </body>
 
