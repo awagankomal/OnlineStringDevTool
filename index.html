@@ -4,34 +4,81 @@
         <title>Online String Convertor tool- UpperCase,LowerCase...</title>
         <style>
             .app_container{
+               margin: 20px auto;
+               padding: 10px 20px;
+               height: 500px;
+               border: 1px solid black;
+               background-color: #77B0AA;
+               width:500px;
+               flex-direction: column;
 
             }
             h1,h2{
                 text-align: center;
-                color: brown;
+                color: #003C43;
 
             }
             p{
                 text-align: justify;
             }
-            .result_style{
-               text-align: start;
+            .text_style{
+                margin-left:30px;
+                width: 430px;
+                height:60px;
+                text-align: center;
+                
+            }
+            .para_style{
+               text-align:justify;
+               margin-left:10px;
+               margin-right: 10px;
                
+            }
+            .result_style{
+                margin-left: 30px;
+                text-align: center;
+                font-size: larger;
+            }
+
+            .btn_container{
+                flex-direction: column;
+                align-items: center;
+                align-content:center;
+                text-align: center;
+                margin: 30px;
+                padding: 10px 20px;
+                box-shadow: 0px 0px 2px 2px #003C43;
+
+            }
+            .btn{
+                
+                padding: 5px 10px;
+                background-color: #003C43;
+                border-radius: 3px;
+                box-shadow: 0px 0px 2px 2px #dfe8e9;
+                color:whitesmoke;
+            }
+            .btn:hover{
+                color:#003C43;
+                background-color: #E3FEF7;
+                font-weight: bold;
             }
         </style>
     </head>
     <body>
         <div class="app_container">
-        <h1>Online String Convertor tool</h1>
-        <p class="result_style">Convert String offers resources for converting strings between formats. If you need a fast free online tool for applying common string functions or string manipulation routines then you are in the right place! We currently offer string manipulation functions like UpeerCase, Lowercase, Word and character count. </p><br/>
+        <h1>Online String Convertor Tool</h1>
+        <p class="para_style">Convert String offers resources for converting strings between formats. If you need a fast free online tool for applying common string functions or string manipulation routines then you are in the right place! We currently offer string manipulation functions like UpeerCase, Lowercase, Word and character count. </p>
         <h2>Let's start 😊</h2>
 
-        <input type="text" placeholder="Enter input text here ..." id="input_text"/><br/>
-        <p id="result_text"> </p><br/>
-        <button onclick="performAction('uppercase')" class="up_case_btn">UpperCase</button>
-        <button onclick="performAction('lowercase')" class="up_case_btn">LowerCase</button>
-        <button onclick="performAction('charcount')" class="up_case_btn">Char Count</button>
-        <button onclick="performAction('wordcount')" class="up_case_btn">Word Count</button>
+        <input type="text" placeholder="Enter input text here ..." id="input_text" class="text_style"/><br/>
+        <p id="result_text" class="result_style"> </p><br/>
+        <div class="btn_container">
+        <button onclick="performAction('uppercase')" class="btn" >UpperCase</button>
+        <button onclick="performAction('lowercase')" class="btn" >LowerCase</button>
+        <button onclick="performAction('charcount')" class="btn" >Char Count</button>
+        <button onclick="performAction('wordcount')" class="btn" >Word Count</button>
+    </div>
     </div>
     <script>
        function performAction(action) {
